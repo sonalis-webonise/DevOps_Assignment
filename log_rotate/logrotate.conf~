@@ -1,0 +1,7 @@
+# sample logrotate configuration file
+       
+       /home/webonise/log_rotate/myfile.log {
+                size 3k
+		create 700 webonise webonise	
+		rotate 3
+           }

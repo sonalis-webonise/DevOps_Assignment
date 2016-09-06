@@ -1,0 +1,2 @@
+logrotate state -- version 2
+"/home/webonise/log_rotate/myfile.log" 2016-9-6-15:35:28
