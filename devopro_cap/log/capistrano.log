@@ -1,0 +1,373 @@
+# Logfile created on 2016-09-06 14:41:01 +0530 by logger.rb/53938
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-09-06 14:41:01 +0530 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [dc8c2214] Running /usr/bin/env mkdir -p /tmp on 127.0.0.1
+ DEBUG [dc8c2214] Command: /usr/bin/env mkdir -p /tmp
+  INFO [dc8c2214] Finished in 0.149 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-webpage-staging-webonise.sh 0.0%
+  INFO Uploading /tmp/git-ssh-webpage-staging-webonise.sh 100.0%
+  INFO [56f0d6cd] Running /usr/bin/env chmod 700 /tmp/git-ssh-webpage-staging-webonise.sh on 127.0.0.1
+ DEBUG [56f0d6cd] Command: /usr/bin/env chmod 700 /tmp/git-ssh-webpage-staging-webonise.sh
+  INFO [56f0d6cd] Finished in 0.006 seconds with exit status 0 (successful).
+  INFO [45904582] Running /usr/bin/env git ls-remote --heads git@github.com:sonalis-webonise/DevOps_Assignment.git on 127.0.0.1
+ DEBUG [45904582] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webpage-staging-webonise.sh" ; /usr/bin/env git ls-remote --heads git@github.com:sonalis-webonise/DevOps_Assignment.git )
+ DEBUG [45904582] 	5d71adce66535e2791f6d67300db7c310a737b5e	refs/heads/master
+  INFO [45904582] Finished in 3.441 seconds with exit status 0 (successful).
+  INFO [6a486574] Running /usr/bin/env mkdir -p $HOME/Deployment/shared $HOME/Deployment/releases on 127.0.0.1
+ DEBUG [6a486574] Command: /usr/bin/env mkdir -p $HOME/Deployment/shared $HOME/Deployment/releases
+  INFO [6a486574] Finished in 0.006 seconds with exit status 0 (successful).
+ DEBUG [d1d0616b] Running [ -f $HOME/Deployment/current/REVISION ] on 127.0.0.1
+ DEBUG [d1d0616b] Command: [ -f $HOME/Deployment/current/REVISION ]
+ DEBUG [d1d0616b] Finished in 0.006 seconds with exit status 0 (successful).
+ DEBUG [c3a9ab93] Running /usr/bin/env cat $HOME/Deployment/current/REVISION 2>/dev/null on 127.0.0.1
+ DEBUG [c3a9ab93] Command: /usr/bin/env cat $HOME/Deployment/current/REVISION 2>/dev/null
+ DEBUG [c3a9ab93] 	5fcaa22c6aba145bdfb6d4a79489ac4487299e85
+ DEBUG [c3a9ab93] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [41d932ab] Running [ -f $HOME/Deployment/repo/HEAD ] on 127.0.0.1
+ DEBUG [41d932ab] Command: [ -f $HOME/Deployment/repo/HEAD ]
+ DEBUG [41d932ab] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO The repository mirror is at $HOME/Deployment/repo
+ DEBUG [6a48d000] Running if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi on 127.0.0.1
+ DEBUG [6a48d000] Command: if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi
+ DEBUG [6a48d000] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO [7c923743] Running /usr/bin/env git remote update --prune on 127.0.0.1
+ DEBUG [7c923743] Command: cd $HOME/Deployment/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webpage-staging-webonise.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [7c923743] 	Fetching origin
+ DEBUG [7c923743] 	From github.com:sonalis-webonise/DevOps_Assignment
+ + 5fcaa22...5d71adc master     -> master  (forced update)
+  INFO [7c923743] Finished in 3.551 seconds with exit status 0 (successful).
+ DEBUG [f71adedc] Running if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi on 127.0.0.1
+ DEBUG [f71adedc] Command: if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi
+ DEBUG [f71adedc] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [735d9a2e] Running /usr/bin/env mkdir -p $HOME/Deployment/releases/20160906091105 on 127.0.0.1
+ DEBUG [735d9a2e] Command: cd $HOME/Deployment/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webpage-staging-webonise.sh" ; /usr/bin/env mkdir -p $HOME/Deployment/releases/20160906091105 )
+  INFO [735d9a2e] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO [edbd8b04] Running /usr/bin/env git archive master | tar -x -f - -C $HOME/Deployment/releases/20160906091105 on 127.0.0.1
+ DEBUG [edbd8b04] Command: cd $HOME/Deployment/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webpage-staging-webonise.sh" ; /usr/bin/env git archive master | tar -x -f - -C $HOME/Deployment/releases/20160906091105 )
+  INFO [edbd8b04] Finished in 0.009 seconds with exit status 0 (successful).
+ DEBUG [c65affcc] Running if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi on 127.0.0.1
+ DEBUG [c65affcc] Command: if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi
+ DEBUG [c65affcc] Finished in 0.004 seconds with exit status 0 (successful).
+ DEBUG [1938787f] Running /usr/bin/env git rev-list --max-count=1 master on 127.0.0.1
+ DEBUG [1938787f] Command: cd $HOME/Deployment/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webpage-staging-webonise.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [1938787f] 	5d71adce66535e2791f6d67300db7c310a737b5e
+ DEBUG [1938787f] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [685ea2fa] Running if test ! -d $HOME/Deployment/releases/20160906091105; then echo "Directory does not exist '$HOME/Deployment/releases/20160906091105'" 1>&2; false; fi on 127.0.0.1
+ DEBUG [685ea2fa] Command: if test ! -d $HOME/Deployment/releases/20160906091105; then echo "Directory does not exist '$HOME/Deployment/releases/20160906091105'" 1>&2; false; fi
+ DEBUG [685ea2fa] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [21ce9f38] Running /usr/bin/env echo "5d71adce66535e2791f6d67300db7c310a737b5e" >> REVISION on 127.0.0.1
+ DEBUG [21ce9f38] Command: cd $HOME/Deployment/releases/20160906091105 && /usr/bin/env echo "5d71adce66535e2791f6d67300db7c310a737b5e" >> REVISION
+  INFO [21ce9f38] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [7ee9ecee] Running /usr/bin/env ln -s $HOME/Deployment/releases/20160906091105 $HOME/Deployment/releases/current on 127.0.0.1
+ DEBUG [7ee9ecee] Command: /usr/bin/env ln -s $HOME/Deployment/releases/20160906091105 $HOME/Deployment/releases/current
+  INFO [7ee9ecee] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [2ed9b6cb] Running /usr/bin/env mv $HOME/Deployment/releases/current $HOME/Deployment on 127.0.0.1
+ DEBUG [2ed9b6cb] Command: /usr/bin/env mv $HOME/Deployment/releases/current $HOME/Deployment
+  INFO [2ed9b6cb] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [6c6022ca] Running cd $HOME/Deployment/releases/20160906091105 && docker build -t webpage . on 127.0.0.1
+ DEBUG [6c6022ca] Command: cd $HOME/Deployment/releases/20160906091105 && docker build -t webpage .
+ DEBUG [6c6022ca] 	Cannot connect to the Docker daemon. Is the docker daemon running on this host?
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-09-06 14:44:15 +0530 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [17a0c413] Running /usr/bin/env mkdir -p /tmp on 127.0.0.1
+ DEBUG [17a0c413] Command: /usr/bin/env mkdir -p /tmp
+  INFO [17a0c413] Finished in 0.132 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-webpage-staging-webonise.sh 0.0%
+  INFO Uploading /tmp/git-ssh-webpage-staging-webonise.sh 100.0%
+  INFO [e74028c5] Running /usr/bin/env chmod 700 /tmp/git-ssh-webpage-staging-webonise.sh on 127.0.0.1
+ DEBUG [e74028c5] Command: /usr/bin/env chmod 700 /tmp/git-ssh-webpage-staging-webonise.sh
+  INFO [e74028c5] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [0ce92ffb] Running /usr/bin/env git ls-remote --heads git@github.com:sonalis-webonise/DevOps_Assignment.git on 127.0.0.1
+ DEBUG [0ce92ffb] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webpage-staging-webonise.sh" ; /usr/bin/env git ls-remote --heads git@github.com:sonalis-webonise/DevOps_Assignment.git )
+ DEBUG [0ce92ffb] 	5d71adce66535e2791f6d67300db7c310a737b5e	refs/heads/master
+  INFO [0ce92ffb] Finished in 3.322 seconds with exit status 0 (successful).
+  INFO [ecdad462] Running /usr/bin/env mkdir -p $HOME/Deployment/shared $HOME/Deployment/releases on 127.0.0.1
+ DEBUG [ecdad462] Command: /usr/bin/env mkdir -p $HOME/Deployment/shared $HOME/Deployment/releases
+  INFO [ecdad462] Finished in 0.007 seconds with exit status 0 (successful).
+ DEBUG [dc57dc6a] Running [ -f $HOME/Deployment/current/REVISION ] on 127.0.0.1
+ DEBUG [dc57dc6a] Command: [ -f $HOME/Deployment/current/REVISION ]
+ DEBUG [dc57dc6a] Finished in 0.006 seconds with exit status 0 (successful).
+ DEBUG [4d1451ce] Running /usr/bin/env cat $HOME/Deployment/current/REVISION 2>/dev/null on 127.0.0.1
+ DEBUG [4d1451ce] Command: /usr/bin/env cat $HOME/Deployment/current/REVISION 2>/dev/null
+ DEBUG [4d1451ce] 	5d71adce66535e2791f6d67300db7c310a737b5e
+ DEBUG [4d1451ce] Finished in 0.006 seconds with exit status 0 (successful).
+ DEBUG [32ce4389] Running [ -f $HOME/Deployment/repo/HEAD ] on 127.0.0.1
+ DEBUG [32ce4389] Command: [ -f $HOME/Deployment/repo/HEAD ]
+ DEBUG [32ce4389] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO The repository mirror is at $HOME/Deployment/repo
+ DEBUG [b21aa98f] Running if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi on 127.0.0.1
+ DEBUG [b21aa98f] Command: if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi
+ DEBUG [b21aa98f] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [55e24978] Running /usr/bin/env git remote update --prune on 127.0.0.1
+ DEBUG [55e24978] Command: cd $HOME/Deployment/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webpage-staging-webonise.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [55e24978] 	Fetching origin
+  INFO [55e24978] Finished in 3.229 seconds with exit status 0 (successful).
+ DEBUG [7162d3bd] Running if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi on 127.0.0.1
+ DEBUG [7162d3bd] Command: if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi
+ DEBUG [7162d3bd] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [92d2fd06] Running /usr/bin/env mkdir -p $HOME/Deployment/releases/20160906091418 on 127.0.0.1
+ DEBUG [92d2fd06] Command: cd $HOME/Deployment/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webpage-staging-webonise.sh" ; /usr/bin/env mkdir -p $HOME/Deployment/releases/20160906091418 )
+  INFO [92d2fd06] Finished in 0.022 seconds with exit status 0 (successful).
+  INFO [fe045081] Running /usr/bin/env git archive master | tar -x -f - -C $HOME/Deployment/releases/20160906091418 on 127.0.0.1
+ DEBUG [fe045081] Command: cd $HOME/Deployment/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webpage-staging-webonise.sh" ; /usr/bin/env git archive master | tar -x -f - -C $HOME/Deployment/releases/20160906091418 )
+  INFO [fe045081] Finished in 0.007 seconds with exit status 0 (successful).
+ DEBUG [f69f1100] Running if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi on 127.0.0.1
+ DEBUG [f69f1100] Command: if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi
+ DEBUG [f69f1100] Finished in 0.004 seconds with exit status 0 (successful).
+ DEBUG [bc28a70e] Running /usr/bin/env git rev-list --max-count=1 master on 127.0.0.1
+ DEBUG [bc28a70e] Command: cd $HOME/Deployment/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webpage-staging-webonise.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [bc28a70e] 	5d71adce66535e2791f6d67300db7c310a737b5e
+ DEBUG [bc28a70e] Finished in 0.006 seconds with exit status 0 (successful).
+ DEBUG [0bdeda7f] Running if test ! -d $HOME/Deployment/releases/20160906091418; then echo "Directory does not exist '$HOME/Deployment/releases/20160906091418'" 1>&2; false; fi on 127.0.0.1
+ DEBUG [0bdeda7f] Command: if test ! -d $HOME/Deployment/releases/20160906091418; then echo "Directory does not exist '$HOME/Deployment/releases/20160906091418'" 1>&2; false; fi
+ DEBUG [0bdeda7f] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO [084c5b75] Running /usr/bin/env echo "5d71adce66535e2791f6d67300db7c310a737b5e" >> REVISION on 127.0.0.1
+ DEBUG [084c5b75] Command: cd $HOME/Deployment/releases/20160906091418 && /usr/bin/env echo "5d71adce66535e2791f6d67300db7c310a737b5e" >> REVISION
+  INFO [084c5b75] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [905f6b3e] Running /usr/bin/env ln -s $HOME/Deployment/releases/20160906091418 $HOME/Deployment/releases/current on 127.0.0.1
+ DEBUG [905f6b3e] Command: /usr/bin/env ln -s $HOME/Deployment/releases/20160906091418 $HOME/Deployment/releases/current
+  INFO [905f6b3e] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [400a0429] Running /usr/bin/env mv $HOME/Deployment/releases/current $HOME/Deployment on 127.0.0.1
+ DEBUG [400a0429] Command: /usr/bin/env mv $HOME/Deployment/releases/current $HOME/Deployment
+  INFO [400a0429] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [383c21fc] Running cd $HOME/Deployment/releases/20160906091418 && docker build -t webpage . on 127.0.0.1
+ DEBUG [383c21fc] Command: cd $HOME/Deployment/releases/20160906091418 && docker build -t webpage .
+ DEBUG [383c21fc] 	Cannot connect to the Docker daemon. Is the docker daemon running on this host?
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-09-06 14:45:05 +0530 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [e75ff0d7] Running /usr/bin/env mkdir -p /tmp on 127.0.0.1
+ DEBUG [e75ff0d7] Command: /usr/bin/env mkdir -p /tmp
+  INFO [e75ff0d7] Finished in 0.145 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-webpage-staging-webonise.sh 0.0%
+  INFO Uploading /tmp/git-ssh-webpage-staging-webonise.sh 100.0%
+  INFO [097ecf9f] Running /usr/bin/env chmod 700 /tmp/git-ssh-webpage-staging-webonise.sh on 127.0.0.1
+ DEBUG [097ecf9f] Command: /usr/bin/env chmod 700 /tmp/git-ssh-webpage-staging-webonise.sh
+  INFO [097ecf9f] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [355138d3] Running /usr/bin/env git ls-remote --heads git@github.com:sonalis-webonise/DevOps_Assignment.git on 127.0.0.1
+ DEBUG [355138d3] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webpage-staging-webonise.sh" ; /usr/bin/env git ls-remote --heads git@github.com:sonalis-webonise/DevOps_Assignment.git )
+ DEBUG [355138d3] 	5d71adce66535e2791f6d67300db7c310a737b5e	refs/heads/master
+  INFO [355138d3] Finished in 3.371 seconds with exit status 0 (successful).
+  INFO [cbfabca4] Running /usr/bin/env mkdir -p $HOME/Deployment/shared $HOME/Deployment/releases on 127.0.0.1
+ DEBUG [cbfabca4] Command: /usr/bin/env mkdir -p $HOME/Deployment/shared $HOME/Deployment/releases
+  INFO [cbfabca4] Finished in 0.007 seconds with exit status 0 (successful).
+ DEBUG [9b310805] Running [ -f $HOME/Deployment/current/REVISION ] on 127.0.0.1
+ DEBUG [9b310805] Command: [ -f $HOME/Deployment/current/REVISION ]
+ DEBUG [9b310805] Finished in 0.006 seconds with exit status 0 (successful).
+ DEBUG [288744d5] Running /usr/bin/env cat $HOME/Deployment/current/REVISION 2>/dev/null on 127.0.0.1
+ DEBUG [288744d5] Command: /usr/bin/env cat $HOME/Deployment/current/REVISION 2>/dev/null
+ DEBUG [288744d5] 	5d71adce66535e2791f6d67300db7c310a737b5e
+ DEBUG [288744d5] Finished in 0.006 seconds with exit status 0 (successful).
+ DEBUG [e4735c9e] Running [ -f $HOME/Deployment/repo/HEAD ] on 127.0.0.1
+ DEBUG [e4735c9e] Command: [ -f $HOME/Deployment/repo/HEAD ]
+ DEBUG [e4735c9e] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO The repository mirror is at $HOME/Deployment/repo
+ DEBUG [305940f8] Running if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi on 127.0.0.1
+ DEBUG [305940f8] Command: if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi
+ DEBUG [305940f8] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [d8ffe389] Running /usr/bin/env git remote update --prune on 127.0.0.1
+ DEBUG [d8ffe389] Command: cd $HOME/Deployment/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webpage-staging-webonise.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [d8ffe389] 	Fetching origin
+  INFO [d8ffe389] Finished in 3.167 seconds with exit status 0 (successful).
+ DEBUG [8182009d] Running if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi on 127.0.0.1
+ DEBUG [8182009d] Command: if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi
+ DEBUG [8182009d] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [9f288000] Running /usr/bin/env mkdir -p $HOME/Deployment/releases/20160906091509 on 127.0.0.1
+ DEBUG [9f288000] Command: cd $HOME/Deployment/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webpage-staging-webonise.sh" ; /usr/bin/env mkdir -p $HOME/Deployment/releases/20160906091509 )
+  INFO [9f288000] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO [9b280e7e] Running /usr/bin/env git archive master | tar -x -f - -C $HOME/Deployment/releases/20160906091509 on 127.0.0.1
+ DEBUG [9b280e7e] Command: cd $HOME/Deployment/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webpage-staging-webonise.sh" ; /usr/bin/env git archive master | tar -x -f - -C $HOME/Deployment/releases/20160906091509 )
+  INFO [9b280e7e] Finished in 0.010 seconds with exit status 0 (successful).
+ DEBUG [57293527] Running if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi on 127.0.0.1
+ DEBUG [57293527] Command: if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi
+ DEBUG [57293527] Finished in 0.004 seconds with exit status 0 (successful).
+ DEBUG [41b98eab] Running /usr/bin/env git rev-list --max-count=1 master on 127.0.0.1
+ DEBUG [41b98eab] Command: cd $HOME/Deployment/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webpage-staging-webonise.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [41b98eab] 	5d71adce66535e2791f6d67300db7c310a737b5e
+ DEBUG [41b98eab] Finished in 0.006 seconds with exit status 0 (successful).
+ DEBUG [ad5f54b4] Running if test ! -d $HOME/Deployment/releases/20160906091509; then echo "Directory does not exist '$HOME/Deployment/releases/20160906091509'" 1>&2; false; fi on 127.0.0.1
+ DEBUG [ad5f54b4] Command: if test ! -d $HOME/Deployment/releases/20160906091509; then echo "Directory does not exist '$HOME/Deployment/releases/20160906091509'" 1>&2; false; fi
+ DEBUG [ad5f54b4] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [2bcb9623] Running /usr/bin/env echo "5d71adce66535e2791f6d67300db7c310a737b5e" >> REVISION on 127.0.0.1
+ DEBUG [2bcb9623] Command: cd $HOME/Deployment/releases/20160906091509 && /usr/bin/env echo "5d71adce66535e2791f6d67300db7c310a737b5e" >> REVISION
+  INFO [2bcb9623] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [f42541be] Running /usr/bin/env ln -s $HOME/Deployment/releases/20160906091509 $HOME/Deployment/releases/current on 127.0.0.1
+ DEBUG [f42541be] Command: /usr/bin/env ln -s $HOME/Deployment/releases/20160906091509 $HOME/Deployment/releases/current
+  INFO [f42541be] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [0115d218] Running /usr/bin/env mv $HOME/Deployment/releases/current $HOME/Deployment on 127.0.0.1
+ DEBUG [0115d218] Command: /usr/bin/env mv $HOME/Deployment/releases/current $HOME/Deployment
+  INFO [0115d218] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [f650b01c] Running cd $HOME/Deployment/releases/20160906091509 && docker build -t webpage . on 127.0.0.1
+ DEBUG [f650b01c] Command: cd $HOME/Deployment/releases/20160906091509 && docker build -t webpage .
+ DEBUG [f650b01c] 	Cannot connect to the Docker daemon. Is the docker daemon running on this host?
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-09-06 14:48:31 +0530 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [ccaea239] Running /usr/bin/env mkdir -p /tmp on 127.0.0.1
+ DEBUG [ccaea239] Command: /usr/bin/env mkdir -p /tmp
+  INFO [ccaea239] Finished in 0.145 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-webpage-staging-webonise.sh 0.0%
+  INFO Uploading /tmp/git-ssh-webpage-staging-webonise.sh 100.0%
+  INFO [9012a802] Running /usr/bin/env chmod 700 /tmp/git-ssh-webpage-staging-webonise.sh on 127.0.0.1
+ DEBUG [9012a802] Command: /usr/bin/env chmod 700 /tmp/git-ssh-webpage-staging-webonise.sh
+  INFO [9012a802] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [2e608076] Running /usr/bin/env git ls-remote --heads git@github.com:sonalis-webonise/DevOps_Assignment.git on 127.0.0.1
+ DEBUG [2e608076] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webpage-staging-webonise.sh" ; /usr/bin/env git ls-remote --heads git@github.com:sonalis-webonise/DevOps_Assignment.git )
+ DEBUG [2e608076] 	5d71adce66535e2791f6d67300db7c310a737b5e	refs/heads/master
+  INFO [2e608076] Finished in 3.545 seconds with exit status 0 (successful).
+  INFO [8e1433ad] Running /usr/bin/env mkdir -p $HOME/Deployment/shared $HOME/Deployment/releases on 127.0.0.1
+ DEBUG [8e1433ad] Command: /usr/bin/env mkdir -p $HOME/Deployment/shared $HOME/Deployment/releases
+  INFO [8e1433ad] Finished in 0.006 seconds with exit status 0 (successful).
+ DEBUG [33972b74] Running [ -f $HOME/Deployment/current/REVISION ] on 127.0.0.1
+ DEBUG [33972b74] Command: [ -f $HOME/Deployment/current/REVISION ]
+ DEBUG [33972b74] Finished in 0.006 seconds with exit status 0 (successful).
+ DEBUG [0cab5d2c] Running /usr/bin/env cat $HOME/Deployment/current/REVISION 2>/dev/null on 127.0.0.1
+ DEBUG [0cab5d2c] Command: /usr/bin/env cat $HOME/Deployment/current/REVISION 2>/dev/null
+ DEBUG [0cab5d2c] 	5d71adce66535e2791f6d67300db7c310a737b5e
+ DEBUG [0cab5d2c] Finished in 0.007 seconds with exit status 0 (successful).
+ DEBUG [e3e501db] Running [ -f $HOME/Deployment/repo/HEAD ] on 127.0.0.1
+ DEBUG [e3e501db] Command: [ -f $HOME/Deployment/repo/HEAD ]
+ DEBUG [e3e501db] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO The repository mirror is at $HOME/Deployment/repo
+ DEBUG [23e6d50f] Running if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi on 127.0.0.1
+ DEBUG [23e6d50f] Command: if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi
+ DEBUG [23e6d50f] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [899fc615] Running /usr/bin/env git remote update --prune on 127.0.0.1
+ DEBUG [899fc615] Command: cd $HOME/Deployment/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webpage-staging-webonise.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [899fc615] 	Fetching origin
+  INFO [899fc615] Finished in 3.212 seconds with exit status 0 (successful).
+ DEBUG [859a68be] Running if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi on 127.0.0.1
+ DEBUG [859a68be] Command: if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi
+ DEBUG [859a68be] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [54181e34] Running /usr/bin/env mkdir -p $HOME/Deployment/releases/20160906091835 on 127.0.0.1
+ DEBUG [54181e34] Command: cd $HOME/Deployment/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webpage-staging-webonise.sh" ; /usr/bin/env mkdir -p $HOME/Deployment/releases/20160906091835 )
+  INFO [54181e34] Finished in 0.010 seconds with exit status 0 (successful).
+  INFO [bbb464ee] Running /usr/bin/env git archive master | tar -x -f - -C $HOME/Deployment/releases/20160906091835 on 127.0.0.1
+ DEBUG [bbb464ee] Command: cd $HOME/Deployment/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webpage-staging-webonise.sh" ; /usr/bin/env git archive master | tar -x -f - -C $HOME/Deployment/releases/20160906091835 )
+  INFO [bbb464ee] Finished in 0.010 seconds with exit status 0 (successful).
+ DEBUG [451ebcaa] Running if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi on 127.0.0.1
+ DEBUG [451ebcaa] Command: if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi
+ DEBUG [451ebcaa] Finished in 0.003 seconds with exit status 0 (successful).
+ DEBUG [75779ee3] Running /usr/bin/env git rev-list --max-count=1 master on 127.0.0.1
+ DEBUG [75779ee3] Command: cd $HOME/Deployment/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webpage-staging-webonise.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [75779ee3] 	5d71adce66535e2791f6d67300db7c310a737b5e
+ DEBUG [75779ee3] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [08e29260] Running if test ! -d $HOME/Deployment/releases/20160906091835; then echo "Directory does not exist '$HOME/Deployment/releases/20160906091835'" 1>&2; false; fi on 127.0.0.1
+ DEBUG [08e29260] Command: if test ! -d $HOME/Deployment/releases/20160906091835; then echo "Directory does not exist '$HOME/Deployment/releases/20160906091835'" 1>&2; false; fi
+ DEBUG [08e29260] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO [7e4dc62c] Running /usr/bin/env echo "5d71adce66535e2791f6d67300db7c310a737b5e" >> REVISION on 127.0.0.1
+ DEBUG [7e4dc62c] Command: cd $HOME/Deployment/releases/20160906091835 && /usr/bin/env echo "5d71adce66535e2791f6d67300db7c310a737b5e" >> REVISION
+  INFO [7e4dc62c] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [8a56b37f] Running /usr/bin/env ln -s $HOME/Deployment/releases/20160906091835 $HOME/Deployment/releases/current on 127.0.0.1
+ DEBUG [8a56b37f] Command: /usr/bin/env ln -s $HOME/Deployment/releases/20160906091835 $HOME/Deployment/releases/current
+  INFO [8a56b37f] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO [e2f8b065] Running /usr/bin/env mv $HOME/Deployment/releases/current $HOME/Deployment on 127.0.0.1
+ DEBUG [e2f8b065] Command: /usr/bin/env mv $HOME/Deployment/releases/current $HOME/Deployment
+  INFO [e2f8b065] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [4ca09f8e] Running cd $HOME/Deployment/releases/20160906091835 && docker build -t myapp . on 127.0.0.1
+ DEBUG [4ca09f8e] Command: cd $HOME/Deployment/releases/20160906091835 && docker build -t myapp .
+ DEBUG [4ca09f8e] 	Cannot connect to the Docker daemon. Is the docker daemon running on this host?
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-09-06 14:57:21 +0530 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [b8c5caef] Running /usr/bin/env mkdir -p /tmp on 127.0.0.1
+ DEBUG [b8c5caef] Command: /usr/bin/env mkdir -p /tmp
+  INFO [b8c5caef] Finished in 0.180 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-webpage-staging-webonise.sh 0.0%
+  INFO Uploading /tmp/git-ssh-webpage-staging-webonise.sh 100.0%
+  INFO [b1d3f4b8] Running /usr/bin/env chmod 700 /tmp/git-ssh-webpage-staging-webonise.sh on 127.0.0.1
+ DEBUG [b1d3f4b8] Command: /usr/bin/env chmod 700 /tmp/git-ssh-webpage-staging-webonise.sh
+  INFO [b1d3f4b8] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [2b7ad77b] Running /usr/bin/env git ls-remote --heads git@github.com:sonalis-webonise/DevOps_Assignment.git on 127.0.0.1
+ DEBUG [2b7ad77b] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webpage-staging-webonise.sh" ; /usr/bin/env git ls-remote --heads git@github.com:sonalis-webonise/DevOps_Assignment.git )
+ DEBUG [2b7ad77b] 	5d71adce66535e2791f6d67300db7c310a737b5e	refs/heads/master
+  INFO [2b7ad77b] Finished in 6.130 seconds with exit status 0 (successful).
+  INFO [728f4e0b] Running /usr/bin/env mkdir -p $HOME/Deployment/shared $HOME/Deployment/releases on 127.0.0.1
+ DEBUG [728f4e0b] Command: /usr/bin/env mkdir -p $HOME/Deployment/shared $HOME/Deployment/releases
+  INFO [728f4e0b] Finished in 0.007 seconds with exit status 0 (successful).
+ DEBUG [8232126e] Running [ -f $HOME/Deployment/current/REVISION ] on 127.0.0.1
+ DEBUG [8232126e] Command: [ -f $HOME/Deployment/current/REVISION ]
+ DEBUG [8232126e] Finished in 0.006 seconds with exit status 1 (failed).
+ DEBUG [3f3be2cc] Running [ -f $HOME/Deployment/repo/HEAD ] on 127.0.0.1
+ DEBUG [3f3be2cc] Command: [ -f $HOME/Deployment/repo/HEAD ]
+ DEBUG [3f3be2cc] Finished in 0.005 seconds with exit status 1 (failed).
+ DEBUG [70b25163] Running if test ! -d $HOME/Deployment; then echo "Directory does not exist '$HOME/Deployment'" 1>&2; false; fi on 127.0.0.1
+ DEBUG [70b25163] Command: if test ! -d $HOME/Deployment; then echo "Directory does not exist '$HOME/Deployment'" 1>&2; false; fi
+ DEBUG [70b25163] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [ff9c8661] Running /usr/bin/env git clone --mirror git@github.com:sonalis-webonise/DevOps_Assignment.git $HOME/Deployment/repo on 127.0.0.1
+ DEBUG [ff9c8661] Command: cd $HOME/Deployment && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webpage-staging-webonise.sh" ; /usr/bin/env git clone --mirror git@github.com:sonalis-webonise/DevOps_Assignment.git $HOME/Deployment/repo )
+ DEBUG [ff9c8661] 	Cloning into bare repository '/home/webonise/Deployment/repo'...
+  INFO [ff9c8661] Finished in 3.791 seconds with exit status 0 (successful).
+ DEBUG [10602394] Running if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi on 127.0.0.1
+ DEBUG [10602394] Command: if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi
+ DEBUG [10602394] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [7097be24] Running /usr/bin/env git remote update --prune on 127.0.0.1
+ DEBUG [7097be24] Command: cd $HOME/Deployment/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webpage-staging-webonise.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [7097be24] 	Fetching origin
+  INFO [7097be24] Finished in 3.250 seconds with exit status 0 (successful).
+ DEBUG [78488ac0] Running if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi on 127.0.0.1
+ DEBUG [78488ac0] Command: if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi
+ DEBUG [78488ac0] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [0cd3b80f] Running /usr/bin/env mkdir -p $HOME/Deployment/releases/20160906092728 on 127.0.0.1
+ DEBUG [0cd3b80f] Command: cd $HOME/Deployment/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webpage-staging-webonise.sh" ; /usr/bin/env mkdir -p $HOME/Deployment/releases/20160906092728 )
+  INFO [0cd3b80f] Finished in 0.008 seconds with exit status 0 (successful).
+  INFO [db046808] Running /usr/bin/env git archive master | tar -x -f - -C $HOME/Deployment/releases/20160906092728 on 127.0.0.1
+ DEBUG [db046808] Command: cd $HOME/Deployment/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webpage-staging-webonise.sh" ; /usr/bin/env git archive master | tar -x -f - -C $HOME/Deployment/releases/20160906092728 )
+  INFO [db046808] Finished in 0.008 seconds with exit status 0 (successful).
+ DEBUG [17d0290f] Running if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi on 127.0.0.1
+ DEBUG [17d0290f] Command: if test ! -d $HOME/Deployment/repo; then echo "Directory does not exist '$HOME/Deployment/repo'" 1>&2; false; fi
+ DEBUG [17d0290f] Finished in 0.004 seconds with exit status 0 (successful).
+ DEBUG [1031088f] Running /usr/bin/env git rev-list --max-count=1 master on 127.0.0.1
+ DEBUG [1031088f] Command: cd $HOME/Deployment/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-webpage-staging-webonise.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [1031088f] 	5d71adce66535e2791f6d67300db7c310a737b5e
+ DEBUG [1031088f] Finished in 0.006 seconds with exit status 0 (successful).
+ DEBUG [04384fdd] Running if test ! -d $HOME/Deployment/releases/20160906092728; then echo "Directory does not exist '$HOME/Deployment/releases/20160906092728'" 1>&2; false; fi on 127.0.0.1
+ DEBUG [04384fdd] Command: if test ! -d $HOME/Deployment/releases/20160906092728; then echo "Directory does not exist '$HOME/Deployment/releases/20160906092728'" 1>&2; false; fi
+ DEBUG [04384fdd] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [e512cc79] Running /usr/bin/env echo "5d71adce66535e2791f6d67300db7c310a737b5e" >> REVISION on 127.0.0.1
+ DEBUG [e512cc79] Command: cd $HOME/Deployment/releases/20160906092728 && /usr/bin/env echo "5d71adce66535e2791f6d67300db7c310a737b5e" >> REVISION
+  INFO [e512cc79] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [b7e860c7] Running /usr/bin/env ln -s $HOME/Deployment/releases/20160906092728 $HOME/Deployment/releases/current on 127.0.0.1
+ DEBUG [b7e860c7] Command: /usr/bin/env ln -s $HOME/Deployment/releases/20160906092728 $HOME/Deployment/releases/current
+  INFO [b7e860c7] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [484a603e] Running /usr/bin/env mv $HOME/Deployment/releases/current $HOME/Deployment on 127.0.0.1
+ DEBUG [484a603e] Command: /usr/bin/env mv $HOME/Deployment/releases/current $HOME/Deployment
+  INFO [484a603e] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [e4e56ac5] Running cd $HOME/Deployment/releases/20160906092728 && docker build -t myapp . on 127.0.0.1
+ DEBUG [e4e56ac5] Command: cd $HOME/Deployment/releases/20160906092728 && docker build -t myapp .
+ DEBUG [e4e56ac5] 	Sending build context to Docker daemon 19.46 kB
+ DEBUG [e4e56ac5] 	Step 1 : FROM nginx
+ DEBUG [e4e56ac5] 	 ---> 4efb2fcdb1ab
+ DEBUG [e4e56ac5] 	Step 2 : COPY . /app
+ DEBUG [e4e56ac5] 	 ---> b8e50a7922d3
+ DEBUG [e4e56ac5] 	Removing intermediate container ba4f78e651c6
+ DEBUG [e4e56ac5] 	Step 3 : WORKDIR /app
+ DEBUG [e4e56ac5] 	 ---> Running in 8e1723aaf383
+ DEBUG [e4e56ac5] 	 ---> 5097105fb500
+ DEBUG [e4e56ac5] 	Removing intermediate container 8e1723aaf383
+ DEBUG [e4e56ac5] 	Step 4 : RUN cp webpage.html /usr/share/nginx/html/ 	&& cp styles.css /usr/share/nginx/html/
+ DEBUG [e4e56ac5] 	 ---> Running in b154a14470ce
+ DEBUG [e4e56ac5] 	 ---> c739a074929e
+ DEBUG [e4e56ac5] 	Removing intermediate container b154a14470ce
+ DEBUG [e4e56ac5] 	Step 5 : EXPOSE 80
+ DEBUG [e4e56ac5] 	 ---> Running in a7f4a49831ff
+ DEBUG [e4e56ac5] 	 ---> 1ee25ab95fc5
+ DEBUG [e4e56ac5] 	Removing intermediate container a7f4a49831ff
+ DEBUG [e4e56ac5] 	Successfully built 1ee25ab95fc5
+  INFO [e4e56ac5] Finished in 3.909 seconds with exit status 0 (successful).
+  INFO [c12454b6] Running docker run -d -p 8000:80 myapp on 127.0.0.1
+ DEBUG [c12454b6] Command: docker run -d -p 8000:80 myapp
+ DEBUG [c12454b6] 	8a12b95bfbbcec1c0d5677039077646fa0903ac3e40b587dffced5b697cde825
+  INFO [c12454b6] Finished in 0.877 seconds with exit status 0 (successful).
+ DEBUG [a25d09df] Running /usr/bin/env ls -xtr $HOME/Deployment/releases on 127.0.0.1
+ DEBUG [a25d09df] Command: /usr/bin/env ls -xtr $HOME/Deployment/releases
+ DEBUG [a25d09df] 	20160906092728
+ DEBUG [a25d09df] Finished in 0.006 seconds with exit status 0 (successful).
+ DEBUG [f30beea9] Running if test ! -d $HOME/Deployment/releases; then echo "Directory does not exist '$HOME/Deployment/releases'" 1>&2; false; fi on 127.0.0.1
+ DEBUG [f30beea9] Command: if test ! -d $HOME/Deployment/releases; then echo "Directory does not exist '$HOME/Deployment/releases'" 1>&2; false; fi
+ DEBUG [f30beea9] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [6dfe4f2b] Running /usr/bin/env echo "Branch master (at 5d71adce66535e2791f6d67300db7c310a737b5e) deployed as release 20160906092728 by webonise" >> $HOME/Deployment/revisions.log on 127.0.0.1
+ DEBUG [6dfe4f2b] Command: cd $HOME/Deployment/releases && /usr/bin/env echo "Branch master (at 5d71adce66535e2791f6d67300db7c310a737b5e) deployed as release 20160906092728 by webonise" >> $HOME/Deployment/revisions.log
+  INFO [6dfe4f2b] Finished in 0.006 seconds with exit status 0 (successful).
